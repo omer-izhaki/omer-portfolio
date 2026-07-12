@@ -70,6 +70,7 @@ const FIXTURES: Fixture[] = [
     stack: "WebRTC, Gemini Live, 2D/3D diagram engine",
     image: "/assets/project-ar.png",
     imageAlt: "Technician wearing AR glasses seeing holographic repair diagrams",
+    link: { href: "https://github.com/omer-izhaki/-ar-technician-assistant", label: "View code" },
   },
 ];
 
