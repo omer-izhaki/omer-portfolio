@@ -10,13 +10,22 @@ export function FootballCursor() {
   const [live, setLive] = useState(false);
   const ballRef = useRef<HTMLDivElement>(null);
 
+  // Arm the cursor only on fine-pointer, motion-friendly clients.
   useEffect(() => {
     if (!isFinePointer() || prefersReducedMotion()) return;
     setLive(true);
-    document.body.classList.add("cursor-live");
+  }, []);
 
+  // Wire movement AFTER the ball exists in the DOM (live re-render), so the
+  // native cursor is never hidden while the ball is unpositioned.
+  useEffect(() => {
+    if (!live) return;
     const ball = ballRef.current;
     if (!ball) return;
+    document.body.classList.add("cursor-live");
+
+    // Start under the current pointer guess: center screen beats corner (0,0)
+    gsap.set(ball, { x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     const xTo = gsap.quickTo(ball, "x", { duration: 0.35, ease: "power3" });
     const yTo = gsap.quickTo(ball, "y", { duration: 0.35, ease: "power3" });
@@ -47,7 +56,7 @@ export function FootballCursor() {
       spin?.kill();
       document.body.classList.remove("cursor-live");
     };
-  }, []);
+  }, [live]);
 
   if (!live) return null;
 
