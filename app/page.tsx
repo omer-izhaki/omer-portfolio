@@ -1,50 +1,32 @@
-import Nav from '@/components/Nav';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { SiteNav } from "@/components/site/nav";
+import { Hero } from "@/components/site/hero";
+import { PlayerCard } from "@/components/site/player-card";
+import { Fixtures } from "@/components/site/fixtures";
+import { Seasons } from "@/components/site/seasons";
+import { Training } from "@/components/site/training";
+import { TrophyRoom } from "@/components/site/trophy-room";
+import { OfferSheet } from "@/components/site/offer-sheet";
+import { FootballCursor } from "@/components/site/cursor";
+import { MotionRoot } from "@/components/site/motion-root";
 
-// Main page — composes all sections in reading order.
-// Anchor IDs on each section match the nav href targets.
+// One-page portfolio: the whole page is Omer's game universe. Sections read
+// as beats of one match day: main menu, player card, fixtures, seasons,
+// training ground, trophy room, offer sheet.
 export default function Home() {
   return (
-    <>
-      {/* Sticky navigation */}
-      <Nav />
-
-      <main className="relative">
-        {/* Full-height hero */}
+    <div className="min-h-dvh overflow-x-clip">
+      <MotionRoot />
+      <FootballCursor />
+      <SiteNav />
+      <main>
         <Hero />
-
-        {/* Narrow content sections */}
-        <div className="max-w-3xl mx-auto px-6 md:px-12">
-          <section id="about">
-            <About />
-          </section>
-
-          <section id="experience">
-            <Experience />
-          </section>
-        </div>
-
-        {/* Wider projects section */}
-        <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <section id="projects">
-            <Projects />
-          </section>
-        </div>
-
-        {/* Narrow contact section */}
-        <div className="max-w-3xl mx-auto px-6 md:px-12">
-          <section id="contact">
-            <Contact />
-          </section>
-        </div>
+        <PlayerCard />
+        <Fixtures />
+        <Seasons />
+        <Training />
+        <TrophyRoom />
+        <OfferSheet />
       </main>
-
-      <Footer />
-    </>
+    </div>
   );
 }

@@ -1,67 +1,54 @@
-import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Heebo } from 'next/font/google';
-import './globals.css';
-import Providers from './providers';
+import type { Metadata } from "next";
+import { Outfit, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
 
-// ─── Font loading ─────────────────────────────────────────
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+// Brand fonts: Outfit for display, IBM Plex Mono for scoreboard readouts
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
+  display: "swap",
 });
 
-// Heebo supports Hebrew — loaded alongside the Latin fonts
-// so RTL switching is instant without a flash of unstyled text
-const heebo = Heebo({
-  subsets: ['latin', 'hebrew'],
-  variable: '--font-heebo',
-  display: 'swap',
-});
-
-// ─── SEO metadata ─────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Omer Itzhaki | Developer & CS Student',
+  title: "Omer Izhaki | Developer, Game Maker, Team Leader",
   description:
-    'Computer Science & Cybersecurity student at the Open University of Israel. ' +
-    'Building AI systems, securing networks, and leading teams. ' +
-    'Open to Junior / Student roles in High-Tech, DevOps, Automation, and Product Management.',
-  keywords: [
-    'Omer Itzhaki',
-    'portfolio',
-    'computer science',
-    'cybersecurity',
-    'DevOps',
-    'AI',
-    'React',
-    'Python',
-    'Israel',
-  ],
-  authors: [{ name: 'Omer Itzhaki' }],
+    "CS and cybersecurity student who ships real products: Road to Global Cup on the iOS App Store, " +
+    "AI apps, and a quant trading bot. Open to full-time roles and business opportunities.",
+  authors: [{ name: "Omer Izhaki" }],
+  icons: {
+    icon: [{ url: "/favicon-32.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
-    title: 'Omer Itzhaki | Developer & CS Student',
+    title: "Omer Izhaki | Developer, Game Maker, Team Leader",
     description:
-      'CS & Cybersecurity student — AI systems, networks, leadership. Open to high-tech roles.',
-    type: 'website',
+      "A portfolio played as an arcade football season. Game on the App Store, AI apps, quant trading.",
+    type: "website",
   },
 };
 
-// ─── Root layout ──────────────────────────────────────────
+export const viewport = {
+  themeColor: "#0e1433",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    // lang and dir are updated dynamically by the i18n context on the client
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${heebo.variable}`}>
-      <body className="bg-navy text-slate font-inter antialiased">
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className={`${outfit.variable} ${plexMono.variable} font-display antialiased`}>
+        {children}
       </body>
     </html>
   );
