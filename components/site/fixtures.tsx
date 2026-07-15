@@ -31,6 +31,7 @@ const FIXTURES: Fixture[] = [
     stack: "Unity 6, C#, Apple Game Center",
     image: "/assets/game/action-shot.jpg",
     imageAlt: "Road to Global Cup player striking the ball",
+    link: { href: "https://apps.apple.com/app/road-to-global-cup/id6784271196", label: "App Store" },
     gallery: [
       { src: "/assets/game/menu-screenshot.jpg", alt: "Road to Global Cup main menu" },
       { src: "/assets/game/gameplay-1.jpg", alt: "Tutorial match against South Korea" },
