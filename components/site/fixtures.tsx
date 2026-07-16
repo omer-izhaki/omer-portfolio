@@ -116,7 +116,7 @@ export function Fixtures() {
 
   return (
     <section id="fixtures" ref={wrap} className="relative md:h-[340dvh]">
-      <div className="top-0 overflow-hidden md:sticky md:h-dvh">
+      <div className="top-0 flex flex-col overflow-hidden md:sticky md:h-dvh">
         {/* Concourse panorama drifting behind the cards at half rate */}
         <img
           ref={pano}
@@ -130,7 +130,7 @@ export function Fixtures() {
           className="absolute inset-0 hidden bg-gradient-to-b from-stadium/80 via-transparent to-stadium/90 md:block"
         />
 
-        <div className="relative mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-[12dvh]">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-24 md:px-8 md:pt-24">
           <p className="font-scoreboard text-xs tracking-[0.24em] text-gold">
             SEASON 2022/27
           </p>
@@ -142,7 +142,7 @@ export function Fixtures() {
         {/* The rail: translated on desktop, native snap scroll on mobile */}
         <div
           ref={track}
-          className="relative mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-10 will-change-transform md:mt-[6dvh] md:snap-none md:overflow-x-visible md:ps-[8vw] md:pe-[16vw]"
+          className="relative z-10 mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-10 will-change-transform md:mt-0 md:flex-1 md:snap-none md:items-center md:overflow-visible md:px-0 md:ps-[8vw] md:pe-[16vw]"
         >
           {FIXTURES.map((f) => (
             <FixtureCard key={f.id} fixture={f} />
@@ -155,35 +155,37 @@ export function Fixtures() {
 
 function FixtureCard({ fixture }: { fixture: Fixture }) {
   return (
-    <article className="w-[86vw] shrink-0 snap-center overflow-hidden rounded-2xl border border-tier-edge bg-stadium/85 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:w-[70vw] md:w-[44rem]">
-      <div className="relative">
-        <img src={fixture.image} alt={fixture.imageAlt} className="aspect-[3/2] w-full object-cover" />
+    <article className="flex w-[86vw] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-tier-edge bg-stadium/85 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:w-[70vw] md:max-h-[80dvh] md:w-[42rem]">
+      <div className="relative shrink-0">
+        <img src={fixture.image} alt={fixture.imageAlt} className="h-40 w-full object-cover md:h-44" />
         <span className="absolute start-4 top-4 rounded-md bg-stadium/85 px-3 py-1 font-scoreboard text-[11px] tracking-[0.22em] text-gold backdrop-blur">
           {fixture.kickoff}
         </span>
       </div>
 
-      <div className="p-6 md:p-8">
+      <div className="flex min-h-0 flex-1 flex-col p-5 md:p-6">
+        <div className="min-h-0 flex-1 overflow-hidden">
         <p className="font-scoreboard text-[11px] tracking-[0.2em] text-pitch">{fixture.tag}</p>
         <h3 className="mt-1.5 text-2xl font-bold tracking-tight text-flood md:text-3xl">
           {fixture.title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-flood-dim">{fixture.body}</p>
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-flood-dim">{fixture.body}</p>
 
         {fixture.gallery && (
-          <div className="mt-4 grid grid-cols-3 gap-2">
+          <div className="mt-3 grid grid-cols-3 gap-2">
             {fixture.gallery.map((g) => (
               <img
                 key={g.src}
                 src={g.src}
                 alt={g.alt}
-                className="aspect-video w-full rounded-lg border border-tier-edge object-cover"
+                className="h-16 w-full rounded-lg border border-tier-edge object-cover md:h-20"
               />
             ))}
           </div>
         )}
+        </div>
 
-        <div className="mt-5 flex items-center justify-between gap-4">
+        <div className="mt-4 flex shrink-0 items-center justify-between gap-4">
           <p className="font-scoreboard text-xs text-flood-dim">{fixture.stack}</p>
           {fixture.link ? (
             // Scoreboard chip: glyphs flip like stadium split-flap digits on hover
