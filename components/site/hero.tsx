@@ -18,6 +18,10 @@ export function Hero() {
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
+    // Desktop only: the layered parallax + cursor drift. On phones the hero is a
+    // static, composed scene (no scroll scrub, no jump on open). Mobile keeps the
+    // character as a small corner mascot so the copy never fights the artwork.
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       // Scroll parallax: layers leave the viewport at different speeds.
@@ -78,13 +82,13 @@ export function Hero() {
         ref={player}
         src="/assets/game/player-arg.png"
         alt="Chibi footballer character from Road to Global Cup, the iOS game Omer built"
-        className="absolute bottom-[8dvh] end-[4%] z-10 h-[52dvh] w-auto object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.55)] will-change-transform sm:h-[62dvh] md:end-[8%] md:h-[72dvh]"
+        className="absolute bottom-0 -end-[10%] z-10 h-[32dvh] w-auto object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.55)] will-change-transform sm:h-[40dvh] md:bottom-[8dvh] md:end-[8%] md:h-[72dvh]"
       />
       {/* L3: front haze for text legibility */}
       <div
         ref={haze}
         aria-hidden
-        className="absolute inset-0 z-10 bg-gradient-to-t from-stadium via-stadium/45 to-transparent opacity-75"
+        className="absolute inset-0 z-10 bg-gradient-to-t from-stadium via-stadium/60 to-transparent opacity-90 md:via-stadium/45 md:opacity-75"
       />
 
       {/* Copy block, lower-start like the game menu */}
