@@ -39,8 +39,20 @@ const FIXTURES: Fixture[] = [
     ],
   },
   {
-    id: "caliq",
+    id: "tenders-finder",
     kickoff: "MATCH 02",
+    title: "Tenders Finder",
+    tag: "B2B PROCUREMENT SaaS",
+    body:
+      "Co-founded B2B SaaS that unifies public-procurement tenders from siloed government portals into one workspace and matches each against a company's profile. Playwright automation against ASP.NET WebForms, an LLM validate–repair extraction pipeline, and forced multi-tenant Row-Level Security.",
+    stack: "Python, FastAPI, Next.js, PostgreSQL, pgvector",
+    image: "/assets/project-tenders.png",
+    imageAlt: "Tenders Finder dashboard showing a live procurement-tender feed",
+    link: { href: "https://tenders-finder.vercel.app/", label: "Live site" },
+  },
+  {
+    id: "caliq",
+    kickoff: "MATCH 03",
     title: "Caliq",
     tag: "AI NUTRITION COACH",
     body:
@@ -51,7 +63,7 @@ const FIXTURES: Fixture[] = [
   },
   {
     id: "ometrader",
-    kickoff: "MATCH 03",
+    kickoff: "MATCH 04",
     title: "OmeTheTrader",
     tag: "QUANT TRADING BOT",
     body:
@@ -63,7 +75,7 @@ const FIXTURES: Fixture[] = [
   },
   {
     id: "ar-assist",
-    kickoff: "MATCH 04",
+    kickoff: "MATCH 05",
     title: "AR Technician Assistant",
     tag: "AI VIDEO STARTUP, IRIS PROGRAM",
     body:
