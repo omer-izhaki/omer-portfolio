@@ -39,16 +39,16 @@ const FIXTURES: Fixture[] = [
     ],
   },
   {
-    id: "tenders-finder",
+    id: "lumosource",
     kickoff: "MATCH 02",
-    title: "Tenders Finder",
+    title: "Lumosource",
     tag: "B2B PROCUREMENT SaaS",
     body:
-      "Co-founded B2B SaaS that unifies public-procurement tenders from siloed government portals into one workspace and matches each against a company's profile. Playwright automation against ASP.NET WebForms, an LLM validate–repair extraction pipeline, and forced multi-tenant Row-Level Security.",
-    stack: "Python, FastAPI, Next.js, PostgreSQL, pgvector",
+      "Co-founded with two reservists (formerly Tenders Finder). Collects ~900 new public tenders a day from the Israeli MOD, EU TED and UK Find a Tender, and matches them to company profiles across Hebrew, English and EU languages. AI profile-building chat, daily alerts and a bid pipeline, running on Google Cloud with Gemini on Vertex AI.",
+    stack: "Python, Next.js, PostgreSQL + pgvector, Vertex AI, GCP",
     image: "/assets/project-tenders.png",
-    imageAlt: "Tenders Finder dashboard showing a live procurement-tender feed",
-    link: { href: "https://tenders-finder.vercel.app/", label: "Live site" },
+    imageAlt: "Lumosource dashboard showing a live procurement-tender feed",
+    link: { href: "https://lumosource.org/", label: "Live site" },
   },
   {
     id: "caliq",
@@ -77,7 +77,7 @@ const FIXTURES: Fixture[] = [
     id: "ar-assist",
     kickoff: "MATCH 05",
     title: "AR Technician Assistant",
-    tag: "AI VIDEO STARTUP, IRIS PROGRAM",
+    tag: "AI VIDEO ASSISTANT",
     body:
       "An AI video assistant that guides field technicians hands-free: real-time WebRTC video, Google Gemini Live reasoning, and a custom 2D/3D diagram engine drawing repair steps over the machine.",
     stack: "WebRTC, Gemini Live, 2D/3D diagram engine",

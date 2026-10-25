@@ -5,9 +5,9 @@ const SEASONS = [
   {
     active: true,
     years: "2026/27",
-    title: "IRIS Program",
-    role: "AI Developer and Entrepreneur",
-    line: "Building AR Technician Assistant: an AI video assistant replacing human experts for military and field technicians with real-time AI and AR guidance.",
+    title: "Lumosource",
+    role: "Co-Founder and Full-Stack Engineer, IRIS Program",
+    line: "Building with two reservists a B2B SaaS that collects ~900 new public tenders a day (Israeli MOD, EU TED, UK) and matches them to company profiles across languages. Live at lumosource.org.",
   },
   {
     active: false,
