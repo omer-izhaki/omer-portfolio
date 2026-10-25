@@ -44,7 +44,7 @@ const FIXTURES: Fixture[] = [
     title: "Lumosource",
     tag: "B2B PROCUREMENT SaaS",
     body:
-      "Co-founded with two reservists (formerly Tenders Finder). Collects ~900 new public tenders a day from the Israeli MOD, EU TED and UK Find a Tender, and matches them to company profiles across Hebrew, English and EU languages. AI profile-building chat, daily alerts and a bid pipeline, running on Google Cloud with Gemini on Vertex AI.",
+      "Co-founded with two reservists. Collects ~900 new public tenders a day from the Israeli MOD, EU TED and UK Find a Tender, and matches them to company profiles across Hebrew, English and EU languages. AI profile-building chat, daily alerts and a bid pipeline, running on Google Cloud with Gemini on Vertex AI.",
     stack: "Python, Next.js, PostgreSQL + pgvector, Vertex AI, GCP",
     image: "/assets/project-tenders.png",
     imageAlt: "Lumosource dashboard showing a live procurement-tender feed",
