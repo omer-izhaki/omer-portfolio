@@ -8,7 +8,7 @@ import { gsap, ScrollTrigger, prefersReducedMotion } from "./motion";
 
 const ATTRIBUTES = [
   { label: "GPA", value: 87, max: 100, display: "87" },
-  { label: "CREDITS", value: 78, max: 120, display: "78" },
+  { label: "CREDITS", value: 95, max: 120, display: "95" },
   { label: "SHIPPED PRODUCTS", value: 4, max: 6, display: "4" },
   { label: "SOLDIERS LED", value: 5, max: 6, display: "5" },
 ];
