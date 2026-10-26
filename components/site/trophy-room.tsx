@@ -27,7 +27,7 @@ export function TrophyRoom() {
               BSc Computer Science, Cybersecurity specialization
             </h3>
             <p className="mt-1 text-sm text-flood-dim">
-              The Open University of Israel. 78 credit points completed, GPA 87,
+              The Open University of Israel. 95 credit points completed, GPA 87,
               graduating summer 2027. Next up: an MBA to pair the engineering with strategy.
             </p>
           </div>
